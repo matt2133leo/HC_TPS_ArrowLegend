@@ -126,7 +126,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1470
+  m_Name: pb_Mesh-6926
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   speed: 0.025
   count: 4
   RandomSkillAC: {fileID: 8300000, guid: b9f363d6c0e634244b6f55616d476a9a, type: 3}
-  SkillAC: {fileID: 8300000, guid: 708b079f963c514438a25fca13c1870d, type: 3}
+  SkillAC: {fileID: 8300000, guid: 8f6d27e35db1f2f47b19dc162b710f7f, type: 3}
   skillrandom_int: 0
   skillName:
   - "\u9023\u5C04"
@@ -1346,7 +1346,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1468
+  m_Name: pb_Mesh-6924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4023,7 +4023,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16196
+  m_Name: pb_Mesh20740
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4299,7 +4299,7 @@ MonoBehaviour:
   speed: 0.025
   count: 3
   RandomSkillAC: {fileID: 8300000, guid: b9f363d6c0e634244b6f55616d476a9a, type: 3}
-  SkillAC: {fileID: 8300000, guid: 708b079f963c514438a25fca13c1870d, type: 3}
+  SkillAC: {fileID: 8300000, guid: 8f6d27e35db1f2f47b19dc162b710f7f, type: 3}
   skillrandom_int: 0
   skillName:
   - "\u9023\u5C04"
@@ -4531,7 +4531,7 @@ MonoBehaviour:
   speed: 0.025
   count: 5
   RandomSkillAC: {fileID: 8300000, guid: b9f363d6c0e634244b6f55616d476a9a, type: 3}
-  SkillAC: {fileID: 8300000, guid: 708b079f963c514438a25fca13c1870d, type: 3}
+  SkillAC: {fileID: 8300000, guid: 8f6d27e35db1f2f47b19dc162b710f7f, type: 3}
   skillrandom_int: 0
   skillName:
   - "\u9023\u5C04"
@@ -4784,6 +4784,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1592508330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592508331}
+  - component: {fileID: 1592508333}
+  - component: {fileID: 1592508332}
+  m_Layer: 5
+  m_Name: "\u8F49\u5834\u756B\u9762"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1592508331
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592508330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1617300095}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0.00012207031}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1592508332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592508330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1592508333
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592508330}
+  m_CullTransparentMesh: 0
 --- !u!1 &1617300091
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,6 +4950,7 @@ RectTransform:
   - {fileID: 524376571}
   - {fileID: 697647691}
   - {fileID: 720423635}
+  - {fileID: 1592508331}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

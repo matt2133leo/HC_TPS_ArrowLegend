@@ -48,12 +48,20 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private IEnumerator LoadLevel()
     {
-     AsyncOperation ao = SceneManager.LoadSceneAsync("關卡2");
-        print(ao.progress);
-        yield return new WaitForSeconds(0.01f);
-        print(ao.progress);
-        yield return new WaitForSeconds(0.01f);
-        print(ao.progress);
-        yield return new WaitForSeconds(0.01f);
+
+        AsyncOperation ao = SceneManager.LoadSceneAsync("關卡2");        //場景資訊 = 取得載入場景("場景名稱")
+        ao.allowSceneActivation = false;                                 //載入場景資訊.是否允許切換 = 否
+
+        while (!ao.isDone)                                               //當(當在入場景資訊.是否完成 為 否 )
+        {
+            print(ao.progress);
+            cross.color = new Color(1, 1, 1, ao.progress);               //轉場畫面.顏色 = 新 顏色(1,1,1,透明度)
+            yield return new WaitForSeconds(0.01f);
+            if (ao.progress >= 0.9f)
+            {
+                print("偵測是否進來");
+                ao.allowSceneActivation = true;      //當 載入進度 >= 0.9 允許切換
+            }
+        }
     }
 }

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody rig;
     #endregion
 
+    private LevelManager levelManager;
+
     #region 事件
     private void Start()
     {
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour
         //target = GameComponent<Transform>();       //寫法1
         target = GameObject.Find("目標").transform;  //寫法2 p.s. transform可以這樣寫,請參照 Unity API 
         joy = GameObject.Find("虛擬搖桿").GetComponent<Joystick>();
+
+        levelManager = FindObjectOfType<LevelManager>();
 
         CharacterAni = GetComponent<Animator>();
     }
@@ -32,6 +36,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) Attack();
         if (Input.GetKeyDown(KeyCode.Alpha2)) Dead();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "傳送區域")
+        {
+            levelManager.StartCoroutine("LoadLevel");
+        }
+    }
+
+
     private void FixedUpdate()
     {
         move();

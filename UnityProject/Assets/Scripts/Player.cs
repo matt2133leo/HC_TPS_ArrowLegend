@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody rig;
     #endregion
 
-    private LevelManager levelManager;
+    private LevelManager levelManager;      ///關卡管理器
+    private HpBarControl hpControl;          //血條控制器
 
     #region 事件
     private void Start()
@@ -29,7 +30,9 @@ public class Player : MonoBehaviour
 
         levelManager = FindObjectOfType<LevelManager>();
 
-        CharacterAni = GetComponent<Animator>();
+        CharacterAni = GetComponent<Animator>();                                //透過類型尋找物件
+
+        hpControl = transform.Find("血條系統").GetComponent<HpBarControl>();    //變形.尋找("子物件")
     }
 
     private void Update()
@@ -96,16 +99,29 @@ public class Player : MonoBehaviour
     /// <param name="damage">玩家受多少傷害</param>
     public void Hit(float damage)
     {
-        data.hp -= damage;
-        // 血量 扣除 傷害值
-
+        
+        data.hp -= damage;        // 血量 扣除 傷害值
+        data.hp = Mathf.Clamp(data.hp, 0, 10000);
+        hpControl.UpdateHpBar(data.hpMax, data.hp);
         print(data.hp);
+        if (data.hp == 0) Dead();
+
+        #region 老師製作血量傷害值往上
+        // 血量控制器.顯示傷害值
+        //StartCoroutine(hpControl.ShowDamage(damage));       //老師製作(傷害值往上移動)
+        #endregion
+
+        #region 自己製作血量傷害值往上移動
+        
+        StartCoroutine(hpControl.playerdamage());
+        
+        #endregion
     }
 
     private void Dead()
     {
-        CharacterAni.SetBool("死亡開關", true);
-        //播放死亡動畫 SetBool ("參數名稱", 布林值)
+        CharacterAni.SetBool("死亡開關", true);        //播放死亡動畫 SetBool ("參數名稱", 布林值)
+        this.enabled = false;                          //this 此類別 - enabled 是否啟動
     }
 
 

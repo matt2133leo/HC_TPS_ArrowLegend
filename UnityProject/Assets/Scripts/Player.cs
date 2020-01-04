@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     #region 欄位
     [Header("移動速度"), Range(1, 2000), Tooltip("調整移動速度")]
     public float speed = 10;
+    [Header("玩家資料")]
+    public PlayerData data;
 
     [SerializeField] private Animator CharacterAni;
     [SerializeField] private Joystick joy;
@@ -88,9 +90,16 @@ public class Player : MonoBehaviour
         //播放攻擊動畫 SetTrigger("參數名稱")
     }
 
-    private void Hit(float damage)
+    /// <summary>
+    /// 玩家受傷方法：扣血、顯示傷害值、更新血條
+    /// </summary>
+    /// <param name="damage">玩家受多少傷害</param>
+    public void Hit(float damage)
     {
+        data.hp -= damage;
+        // 血量 扣除 傷害值
 
+        print(data.hp);
     }
 
     private void Dead()
